@@ -1,3 +1,5 @@
+details for futher development...
+
 urlies/
 ├── cmd/                  # CLI logic using urfave/cli or cobra
 │   └── root.go           # Main command registration
