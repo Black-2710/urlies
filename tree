@@ -1,25 +1,25 @@
-details for futher development...
-
 urlies/
-├── cmd/                  # CLI logic using urfave/cli or cobra
-│   └── root.go           # Main command registration
-│   └── flags.go          # Flags & arguments parsing
-├── core/                 # Shared utility functions
-│   └── client.go         # Custom HTTP client, retries, headers
-│   └── output.go         # Output formatter (TXT, JSON, stdout)
-│   └── config.go         # Global config & constants
-│   └── helpers.go        # Misc utilities (URL validation, etc)
-├── modules/              # Recon modules
-│   ├── archive/          # Historical recon tools
-│   │   └── wayback.go    # Wayback Machine integration
-│   │   └── ccrawl.go     # Common Crawl fetching
-│   ├── engine/           # Search engine based recon
-│   │   └── googlite.go   # Google/Bing scraping (like GauPlus)
-│   ├── headless/         # JS parsing tools (Phase 2)
-│   │   └── jsfinder.go   # DOM + JS URL extractor
-├── output/               # Output files directory
-├── assets/               # User-agents.txt, proxies.txt etc
-├── scripts/              # Optional bash/auxiliary tools
-├── go.mod
-├── main.go
-└── README.md
+├── assests/               # (optional/unused for now) static files, future logos or banners maybe
+├── cmd/                   # command-line interface (CLI) setup
+│   ├── flags.go           # parses and defines CLI flags like -u, -m, -o, --depth
+├── core/                  # shared utilities used by all modules
+│   ├── client.go          # custom HTTP client with user-agent + timeout
+│   ├── config.go          # constants (like User-Agent)
+│   ├── helpers.go         # URL parsing, domain extraction, validation
+│   └── output.go          # handles writing to files: `WriteLines()`
+├── go.mod                 # Go module declaration file (lists dependencies)
+├── go.sum                 # Go’s lockfile with exact versions of dependencies
+├── main.go                # main entry point of the tool — calls flags and triggers modules
+├── Makefile               # build automation: `make build`, `make clean`, etc.
+├── modules/               # main recon modules
+│   ├── archive/           # passive recon using web archives
+│   │   ├── ccrawl.go      # (planned) for Common Crawl support
+│   │   └── wayback.go     # actual code for Wayback Machine crawling
+│   ├── engine/            # search engine recon
+│   │   └── googlite.go    # parses search result HTML pages, regex extract URLs
+│   └── headless/          # HTML/JS file analysis
+│       └── jsfinder.go    # parses scripts + inline JS for URLs
+├── output/                # saved recon outputs go here
+├── scripts/               # (reserved for install scripts or helpers later)
+├── tree                   # placeholder file — maybe output of project structure
+└── urlies                 # binary created after build (if you `go build -o urlies`)
