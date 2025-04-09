@@ -1,0 +1,23 @@
+urlies/
+├── cmd/                  # CLI logic using urfave/cli or cobra
+│   └── root.go           # Main command registration
+│   └── flags.go          # Flags & arguments parsing
+├── core/                 # Shared utility functions
+│   └── client.go         # Custom HTTP client, retries, headers
+│   └── output.go         # Output formatter (TXT, JSON, stdout)
+│   └── config.go         # Global config & constants
+│   └── helpers.go        # Misc utilities (URL validation, etc)
+├── modules/              # Recon modules
+│   ├── archive/          # Historical recon tools
+│   │   └── wayback.go    # Wayback Machine integration
+│   │   └── ccrawl.go     # Common Crawl fetching
+│   ├── engine/           # Search engine based recon
+│   │   └── googlite.go   # Google/Bing scraping (like GauPlus)
+│   ├── headless/         # JS parsing tools (Phase 2)
+│   │   └── jsfinder.go   # DOM + JS URL extractor
+├── output/               # Output files directory
+├── assets/               # User-agents.txt, proxies.txt etc
+├── scripts/              # Optional bash/auxiliary tools
+├── go.mod
+├── main.go
+└── README.md
