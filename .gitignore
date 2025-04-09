@@ -1,6 +1,4 @@
 urlies
 output/
-debug_*.json
+debug_*
 *.log
-debug_*.html
-debug_*.txt
