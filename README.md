@@ -2,7 +2,7 @@
 
 **URLies** is a powerful, minimalistic passive recon tool that combines the strengths of tools like `waybackurls`, `gauplus`, and `katana` — all under one CLI interface. Built with concurrency, speed, and modular recon in mind.
 
-> Made by nobody...
+> Made by me for now...
 
 ---
 
