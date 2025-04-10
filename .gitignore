@@ -1,4 +1,6 @@
 urlies
 output/
-debug_*
+debug_google_engine.html
+debug_headless_text.txt
+debug_wayback.json
 *.log
